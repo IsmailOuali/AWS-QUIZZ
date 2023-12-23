@@ -20,7 +20,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: solid black;
+    border: solid white;
 }
 img{
     height: 100px;
@@ -62,4 +62,5 @@ img{
     font-size: 20px;
     background-color: #463CAE;
     color: white;
+    border-style: none;
 }
