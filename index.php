@@ -18,9 +18,9 @@
         <section>
             <div>
 
-                <form class="form-div" action="controller/start.php">
-                    <input class="pseudo" type="text" placeholder="  Enter your pseudo name : ...">
-                    <button class="btn">Commencer</button>
+                <form class="form-div" method="post" action="controller/start.php">
+                    <input class="pseudo" name="pseudo" type="text" placeholder="  Enter your pseudo name : ...">
+                    <button class="btn" name="commecerBtn" value="     Commencer">Commencer</button>
                 </form>
                 <div class="rules">
                     <strong>

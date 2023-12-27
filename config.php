@@ -28,4 +28,3 @@ class DBconnection{
     }
     
 }
-$obj = new 

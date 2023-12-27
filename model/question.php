@@ -27,22 +27,11 @@ class question{
     public function showquestion()
     {
 
-        $sql = DBconnection::connection()->prepare("SELECT * FROM question");
-        $sql->execute();
+        $sql = DBconnection::connection()->query("SELECT * FROM question");
+        
 
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-        
-        $q = array();
-
-        foreach($result as $row){
-            
-            $quest = new question($row['id_question'], $row['nom_question'], $row['id_theme']);
-
-            array_push($q, $quest);
-            
-        }
-       
-        return $q;
+        return $result;
     }
 }
 
