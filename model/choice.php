@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+// include '../config.php';
 include 'question.php';
 
 
@@ -29,7 +29,7 @@ class choice{
         $c = array();
 
         foreach ($result as $row){
-            $choix = new choice($row['id_choice'], $row['id_question'], $row['nom_question'], $row['status']);
+            $choix = new choice($row['nom_choice'], $row['id_question'], $row['nom_question'], $row['status']);
             array_push($c, $choix);
 
         }
@@ -38,6 +38,6 @@ class choice{
         }
 }
 
- print_r(choice::showchoices(2));
+//  print_r(choice::showchoices(2));
 
 ?>

@@ -1,10 +1,14 @@
 <?php
-include 'model/question.php';
+include 'config.php';
+include 'model/choice.php';
 
 session_start();
 
 $question = $_SESSION['question'][$_SESSION['quizz']];
-$choix = $_SESSION['choice'];
+$id_question=$question->__get('id_question');
+$arr =choice::showchoices($id_question);
+
+
 
 
 
@@ -28,26 +32,15 @@ $choix = $_SESSION['choice'];
           </div>
           <form action="controller/next.php" method="post">
               <div class="quiz-options">
+                      <?php  
+                        foreach($arr as $row){
+
+                            ?>
                   <input type="radio" class="input-radio one-a jshdgdgwgdwfdfwdwjfdjwwdwdin" id="one-a" name="yes-1" >
                   <label class="radio-label jsjwjdwjdwjdwco" for="one-a">
-                      <?php  
-                      $i = 1
-                      ?>
-                      <span class="alphabet">A</span><?php echo $choix[$i]->__get('nom_choice') ?><img class="icon jdsjkefkefkefefexco" src="https://res.cloudinary.com/dvhndpbun/image/upload/v1588518387/jdsjkefkefkefefexco.svg" alt="">
-                    </label>
-                    <input type="radio" class="input-radio one-b jshdgdgwgdwfdfwdwjfdjwwdwdco" id="one-b" name="yes-1">
-                    <label class="radio-label jsjwjdwjdwjdwin" for="one-b">
-                        <span class="alphabet">B</span><?php echo $choix[$i]->__get('nom_choice') ?><img class="icon jfdedgwfzexf4hjin" src="https://res.cloudinary.com/dvhndpbun/image/upload/v1588517753/jfdedgwfzexf4hjin.svg">
-                    </label>
-                    <input type="radio" class="input-radio one-c jshdgdgwgdwfdfwdwjfdjwwdwdin" id="one-c" name="yes-1">
-                    <label class="radio-label jsjwjdwjdwjdwin" for="one-c">
-                        <span class="alphabet">C</span><?php echo $choix[$i]->__get('nom_choice') ?><img class="icon jfdedgwfzexf4hjin" src="https://res.cloudinary.com/dvhndpbun/image/upload/v1588517753/jfdedgwfzexf4hjin.svg">
-                    </label>
-                    <input type="radio" class="input-radio one-c jshdgdgwgdwfdfwdwjfdjwwdwdin" id="one-d" name="yes-1">
-                    <label class="radio-label jsjwjdwjdwjdwin" for="one-d">
-                        <span class="alphabet">D</span><?php echo $choix[$i]->__get('nom_choice') ?><img class="icon jfdedgwfzexf4hjin" src="https://res.cloudinary.com/dvhndpbun/image/upload/v1588517753/jfdedgwfzexf4hjin.svg">
-                    </label>
-                    <?php
+                      <span class="alphabet"><?php echo $row->nom_choice?></span><?php  ?><img class="icon jdsjkefkefkefefexco" src="https://res.cloudinary.com/dvhndpbun/image/upload/v1588518387/jdsjkefkefkefefexco.svg" alt="">
+                      <?php
+                    }
 
                         ?>
               </div>
