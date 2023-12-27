@@ -1,6 +1,5 @@
 <?php
 
-include '../config.php';
 
 class theme{
     private $id_theme;
@@ -12,9 +11,9 @@ class theme{
         $this->nom_theme = $nom_theme;
     }
 
-    public function __get($id_theme, $nom_theme){
-        return $this->$id_theme;
-        return $this->$nom_theme;
+    public function __get($prop){
+        return $this->$prop;
+        
     }
 
     public function __set($prop, $value){

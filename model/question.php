@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+
 include 'theme.php';
 
 class question{
@@ -14,25 +14,32 @@ class question{
         
     }
 
-    public function __get($id_question,$nom_question, $theme){
-        return $this->$theme;
-        return $this->$id_question;
-        return $this->$nom_question;
+    public function __get($prop){
+        return $this->$prop;
     }
 
     public function __set($prop, $value){
         $this->$prop = $value;
     }
 
-    public function showquestion()
+    public static function showquestion()
     {
 
-        $sql = DBconnection::connection()->query("SELECT * FROM question");
+        $sql = DBconnection::connection()->query("SELECT * FROM question JOIN theme WHERE question.id_theme = theme.id_theme AND id_question ORDER BY RAND() LIMIT 10");
         
 
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    }
-}
+        $q = array();
+        
+        foreach ($result as $row){
+            $quest = new question($row['id_question'], $row['nom_question'], $row['id_theme'], $row['nom_theme']);
+            array_push($q, $quest);
 
+        }
+        return $q;
+    }
+}   
+
+
+// print_r(question::showquestion());
 ?>

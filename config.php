@@ -2,7 +2,7 @@
 define("dbhost",'localhost');
 define("dbusr",'root');
 define("dbpwd",'root');
-define("db",'opep-3');
+define("db",'QUIZZ');
 
 
 class DBconnection{
