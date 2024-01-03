@@ -7,17 +7,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-quizz.css">
-    <title>QUIZZ OVER</title>
+    <title>correction</title>
 </head>
 <body>
 <section id="game-over">
       <div class="game-over-content">
           <div class="over-text-cont">
               <h1 data-heading="Game Over">Game Over</h1>
-              <h2>Total Score: <?php echo $_SESSION['score'] ?> </h2>
-              <p><?php echo $_SESSION['resultat'] ?></p>
+              <?php
+            //   for($i = 0; $_SESSION['explication']; $i++){
+
+            //   }
+              ?>
+              <h2>correction:  </h2>
+              <p><?php 
+            //   echo $_SESSION['explication'][$i]
+               ?></p>
               <a id="btn" type="submit" onclick="window.location.href='index.php'">Play Again</a>
-              <a id="btn" type="submit" onclick="window.location.href='correction.php'">correction</a>
 
           </div>
       </div>

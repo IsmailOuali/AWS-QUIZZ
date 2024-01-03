@@ -1,5 +1,5 @@
 <?php
-// include '../config.php';
+    // include '../config.php';
 include 'theme.php';
 
 class question{
@@ -41,5 +41,8 @@ class question{
 }   
 
 
-// print_r(question::showquestion());
+// $r =question::showquestion();
+// foreach($r as $row){
+//    echo  $row->theme->__get('nom_theme');
+// }
 ?>

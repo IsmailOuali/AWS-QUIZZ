@@ -1,6 +1,7 @@
 # AWS-QUIZZ
-
-
+--sequence;
+--trello;
+--explication;
 
 Canva presentation:
 
